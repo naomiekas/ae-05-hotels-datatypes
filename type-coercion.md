@@ -1,6 +1,6 @@
 Type coercion
 ================
-Mine Çetinkaya-Rundel
+Naomi Ekas
 
 -   `c(1, 1L, "C")`
 

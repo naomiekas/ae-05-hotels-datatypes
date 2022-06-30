@@ -1,6 +1,6 @@
 ---
 title: "Type coercion"
-author: "Mine Çetinkaya-Rundel"
+author: "Naomi Ekas"
 output: github_document
 ---
 
