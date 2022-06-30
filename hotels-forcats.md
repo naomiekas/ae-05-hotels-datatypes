@@ -1,6 +1,6 @@
 Hotel bookings - factors
 ================
-Mine Çetinkaya-Rundel
+Naomi Ekas
 
 ``` r
 library(tidyverse)
@@ -12,7 +12,7 @@ library(skimr)
 hotels <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-02-11/hotels.csv")
 ```
 
-First, knit the document and view the following visualisation. How are
+First, knit the document and view the following visualization. How are
 the months ordered? What would be a better order? Then, reorder the
 months on the x-axis (levels of `arrival_date_month`) in a way that
 makes more sense. You will want to use a function from the **forcats**
@@ -28,7 +28,7 @@ inspiration and help.
 ``` r
 hotels %>%
   group_by(hotel, arrival_date_month) %>%   # group by hotel type and arrival month
-  summarise(mean_adr = mean(adr)) %>%       # calculate mean adr for each group
+  summarize(mean_adr = mean(adr)) %>%       # calculate mean adr for each group
   ggplot(aes(
     x = arrival_date_month,                 # x-axis = arrival_date_month
     y = mean_adr,                           # y-axis = mean_adr calculated above
@@ -40,10 +40,11 @@ hotels %>%
   labs(x = "Arrival month",                 # customize labels
        y = "Mean ADR (average daily rate)",
        title = "Comparison of resort and city hotel prices across months",
-       subtitle = "Resort hotel prices soar in the summer while ciry hotel prices remain relatively constant throughout the year",
+       subtitle = "Resort hotel prices soar in the summer while city hotel prices remain relatively constant throughout the year",
        color = "Hotel type")
 ```
 
-    ## `summarise()` regrouping output by 'hotel' (override with `.groups` argument)
+    ## `summarise()` has grouped output by 'hotel'. You can override using the
+    ## `.groups` argument.
 
 ![](hotels-forcats_files/figure-gfm/plot-1.png)<!-- -->
